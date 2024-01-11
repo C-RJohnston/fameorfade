@@ -56,7 +56,14 @@ public class EliminationScript : MonoBehaviour
                         lights.RemoveAt(loser);
                         scenes[round-1].GetComponent<SpriteRenderer>().sortingOrder = -2;
                         round += 1;
-                        scenes[round-1].GetComponent<SpriteRenderer>().sortingOrder = -1;
+                        if (round < 5)
+                        {
+                            scenes[round-1].GetComponent<SpriteRenderer>().sortingOrder = -1;
+                        }
+                        else 
+                        {
+                            roundOver = true;
+                        }
                     }
                     
                 }
