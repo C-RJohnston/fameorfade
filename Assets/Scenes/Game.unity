@@ -181,8 +181,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bcc3f6565af2e4f3f8a265f3077bc5ca, type: 3}
+  m_Color: {r: 1, g: 0.75686276, b: 0.02745098, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -265,8 +265,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3bf0cd8dded41498785536d7bbb701bd, type: 3}
+  m_Color: {r: 0, g: 0.3019608, b: 0.2509804, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -349,8 +349,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 702ecf29add2c4e2ca3131e202a6d8ed, type: 3}
+  m_Color: {r: 0.11764706, g: 0.53333336, b: 0.8980392, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 1371221130}
   - component: {fileID: 1371221129}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,8 +433,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c123f09aaf48144dab5c4a28c26bc3c5, type: 3}
+  m_Color: {r: 0.84705883, g: 0.105882354, b: 0.3764706, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -489,10 +489,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: {fileID: 1371221128}
-  player1dance1: {fileID: 0}
   player2: {fileID: 1148256919}
   player3: {fileID: 124531678}
   player4: {fileID: 267384864}
+  dance1: {fileID: 21300000, guid: c123f09aaf48144dab5c4a28c26bc3c5, type: 3}
+  dance2: {fileID: 21300000, guid: 702ecf29add2c4e2ca3131e202a6d8ed, type: 3}
+  dance3: {fileID: 21300000, guid: bcc3f6565af2e4f3f8a265f3077bc5ca, type: 3}
+  dance4: {fileID: 21300000, guid: 3bf0cd8dded41498785536d7bbb701bd, type: 3}
 --- !u!4 &1942331431
 Transform:
   m_ObjectHideFlags: 0
