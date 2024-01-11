@@ -7,6 +7,7 @@ public class EliminationScript : MonoBehaviour
     public float gameDuration;
     public float decisionTime;
     private float gameTime;
+    public GameObject[] lights;
     public GameObject[] players;
 
     private float maxAlpha;
@@ -21,6 +22,7 @@ public class EliminationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         gameTime += Time.deltaTime;
         if (gameTime < gameDuration)
         {
@@ -31,22 +33,22 @@ public class EliminationScript : MonoBehaviour
             if (!roundOver)
             {
                 if(gameTime < gameDuration + decisionTime)
-                    foreach (var player in players)
+                    foreach (var light in lights)
                     {
-                        FlickerLight(player.transform.GetChild(0).gameObject);
+                        FlickerLight(light);
                     }
                 else
                 {
-                    foreach (var player in players)
+                    foreach (var light in lights)
                     {
-                        player.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color =
+                        light.GetComponent<SpriteRenderer>().color =
                             new(1, 1, 1, 0.5f);
                     }
 
                     if (gameTime > gameDuration + decisionTime + 1.1f)
                     {
                         var loser = Random.Range(0, 4);
-                        Lose(players[loser]);
+                        Lose(players[loser], lights[loser]);
                     }
                     
                 }
@@ -70,10 +72,9 @@ public class EliminationScript : MonoBehaviour
         }
     }
 
-    void Lose(GameObject player)
+    void Lose(GameObject player, GameObject light)
     {
-        var spotlight = player.transform.GetChild(0).gameObject;
-        spotlight.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        light.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         //TODO play sounds, progress to next scene
         roundOver = true;
