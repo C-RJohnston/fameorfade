@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class EliminationScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class EliminationScript : MonoBehaviour
     private float gameTime;
     public GameObject[] lights;
     public GameObject[] players;
+    public GameObject globalLight;
 
     private float maxAlpha;
     private float minAlpha;
@@ -32,6 +34,7 @@ public class EliminationScript : MonoBehaviour
         {
             if (!roundOver)
             {
+                globalLight.GetComponent<Light2D>().intensity = 0.3f;
                 if(gameTime < gameDuration + decisionTime)
                     foreach (var light in lights)
                     {
@@ -41,8 +44,7 @@ public class EliminationScript : MonoBehaviour
                 {
                     foreach (var light in lights)
                     {
-                        light.GetComponent<SpriteRenderer>().color =
-                            new(1, 1, 1, 0.5f);
+                        light.GetComponent<Light2D>().enabled = true;
                     }
 
                     if (gameTime > gameDuration + decisionTime + 1.1f)
@@ -64,17 +66,21 @@ public class EliminationScript : MonoBehaviour
         if (lightTimer > interval)
         {
 
-            var sprite = spotlight.GetComponent<SpriteRenderer>();
-            var alpha = sprite.color.a == 0.5f ? 0 : 0.5f;
-            sprite.color = new Color(1, 1, 1, alpha);
+            //var sprite = spotlight.GetComponent<SpriteRenderer>();
+            //var alpha = sprite.color.a == 0.5f ? 0 : 0.5f;
+            //sprite.color = new Color(1, 1, 1, alpha);
+            var light = spotlight.GetComponent<Light2D>();
+            light.enabled = !light.enabled;
             interval = Random.Range(0.1f, 1.5f);
             lightTimer = 0;
         }
     }
 
-    void Lose(GameObject player, GameObject light)
+    void Lose(GameObject player, GameObject spotlight)
     {
-        light.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        //light.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        var light = spotlight.GetComponent<Light2D>();
+        light.enabled = false;
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         //TODO play sounds, progress to next scene
         roundOver = true;
