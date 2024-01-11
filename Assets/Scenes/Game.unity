@@ -288,6 +288,7 @@ Transform:
   m_LocalPosition: {x: 5.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+<<<<<<< HEAD
   m_Children:
   - {fileID: 1832710833}
   m_Father: {fileID: 0}
@@ -377,6 +378,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> filip
 --- !u!1 &1148256919
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,8 +464,12 @@ Transform:
   m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+<<<<<<< HEAD
   m_Children:
   - {fileID: 1781393192}
+=======
+  m_Children: []
+>>>>>>> filip
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -542,6 +553,7 @@ Transform:
   m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+<<<<<<< HEAD
   m_Children:
   - {fileID: 1656599640}
   m_Father: {fileID: 0}
@@ -799,6 +811,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> filip
 --- !u!1 &1942331429
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +827,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1942331431}
   - component: {fileID: 1942331430}
+<<<<<<< HEAD
   - component: {fileID: 1942331432}
+=======
+>>>>>>> filip
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -834,6 +855,7 @@ MonoBehaviour:
   player2: {fileID: 1148256919}
   player3: {fileID: 124531678}
   player4: {fileID: 267384864}
+<<<<<<< HEAD
   wKeyReleased: 1
   aKeyReleased: 1
   sKeyReleased: 1
@@ -850,6 +872,8 @@ MonoBehaviour:
   semicolonKeyReleased: 1
   apostropheKeyReleased: 1
   backslashKeyReleased: 1
+=======
+>>>>>>> filip
 --- !u!4 &1942331431
 Transform:
   m_ObjectHideFlags: 0
@@ -865,6 +889,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &1942331432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,6 +902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec6a7f704d402641840f95634299329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> filip
 --- !u!1 &2061409230
 GameObject:
   m_ObjectHideFlags: 0
