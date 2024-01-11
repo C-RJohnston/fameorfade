@@ -6,9 +6,16 @@ using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
-    
-    public GameObject[] players;
-    public Sprite[] sprites;
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+
+    public Sprite dance1;
+    public Sprite dance2;
+    public Sprite dance3;
+    public Sprite dance4;
+
     private bool wKeyReleased = true;
     private bool aKeyReleased = true;
     private bool sKeyReleased = true;
@@ -43,7 +50,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && wKeyReleased)
         {
             Debug.Log("W key pressed");
-            players[0].GetComponent<SpriteRenderer>().sprite = sprites[0];
+            player1.GetComponent<SpriteRenderer>().sprite = dance1;
             wKeyReleased = false;
         }
 
@@ -55,7 +62,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && aKeyReleased)
         {
             Debug.Log("A key pressed");
-            players[0].GetComponent<SpriteRenderer>().sprite = sprites[1];
+            player1.GetComponent<SpriteRenderer>().sprite = dance2;
             aKeyReleased = false;
         }
 
@@ -67,7 +74,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.S) && sKeyReleased)
         {
             Debug.Log("S key pressed");
-            players[0].GetComponent<SpriteRenderer>().sprite = sprites[2];
+            player1.GetComponent<SpriteRenderer>().sprite = dance3;
             sKeyReleased = false;
         }
 
@@ -79,7 +86,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && dKeyReleased)
         {
             Debug.Log("D key pressed");
-            players[0].GetComponent<SpriteRenderer>().sprite = sprites[3];
+            player1.GetComponent<SpriteRenderer>().sprite = dance4;
             dKeyReleased = false;
         }
 
@@ -94,7 +101,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.T) && tKeyReleased)
         {
             Debug.Log("T key pressed");
-            players[1].GetComponent<SpriteRenderer>().sprite = sprites[0];
+            player2.GetComponent<SpriteRenderer>().sprite = dance1;
             tKeyReleased = false;
         }
 
@@ -106,7 +113,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.F) && fKeyReleased)
         {
             Debug.Log("F key pressed");
-            players[1].GetComponent<SpriteRenderer>().sprite = sprites[1];
+            player2.GetComponent<SpriteRenderer>().sprite = dance2;
             fKeyReleased = false;
         }
 
@@ -118,7 +125,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.G) && gKeyReleased)
         {
             Debug.Log("G key pressed");
-            players[1].GetComponent<SpriteRenderer>().sprite = sprites[2];
+            player2.GetComponent<SpriteRenderer>().sprite = dance3;
             gKeyReleased = false;
         }
 
@@ -130,7 +137,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.H) && hKeyReleased)
         {
             Debug.Log("H key pressed");
-            players[1].GetComponent<SpriteRenderer>().sprite = sprites[3];
+            player2.GetComponent<SpriteRenderer>().sprite = dance4;
             hKeyReleased = false;
         }
 
@@ -145,7 +152,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.I) && iKeyReleased)
         {
             Debug.Log("I key pressed");
-            players[2].GetComponent<SpriteRenderer>().sprite = sprites[0];
+            player3.GetComponent<SpriteRenderer>().sprite = dance1;
             iKeyReleased = false;
         }
 
@@ -157,7 +164,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.J) && jKeyReleased)
         {
             Debug.Log("J key pressed");
-            players[2].GetComponent<SpriteRenderer>().sprite = sprites[1];
+            player3.GetComponent<SpriteRenderer>().sprite = dance2;
             jKeyReleased = false;
         }
 
@@ -169,7 +176,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.K) && kKeyReleased)
         {
             Debug.Log("K key pressed");
-            players[2].GetComponent<SpriteRenderer>().sprite = sprites[2];
+            player3.GetComponent<SpriteRenderer>().sprite = dance3;
             kKeyReleased = false;
         }
 
@@ -181,7 +188,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.L) && lKeyReleased)
         {
             Debug.Log("L key pressed");
-            players[2].GetComponent<SpriteRenderer>().sprite = sprites[3];
+            player3.GetComponent<SpriteRenderer>().sprite = dance4;
             lKeyReleased = false;
         }
 
@@ -196,7 +203,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftBracket) && openBracketKeyReleased)
         {
             Debug.Log("[ key pressed");
-            players[3].GetComponent<SpriteRenderer>().sprite = sprites[0];
+            player4.GetComponent<SpriteRenderer>().sprite = dance1;
             openBracketKeyReleased = false;
         }
 
@@ -208,7 +215,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.Semicolon) && semicolonKeyReleased)
         {
             Debug.Log("; key pressed");
-            players[3].GetComponent<SpriteRenderer>().sprite = sprites[1];
+            player4.GetComponent<SpriteRenderer>().sprite = dance2;
             semicolonKeyReleased = false;
         }
 
@@ -220,7 +227,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.Quote) && apostropheKeyReleased)
         {
             Debug.Log("' key pressed");
-            players[3].GetComponent<SpriteRenderer>().sprite = sprites[2];
+            player4.GetComponent<SpriteRenderer>().sprite = dance3;
             apostropheKeyReleased = false;
         }
 
@@ -232,7 +239,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.Backslash) && backslashKeyReleased)
         {
             Debug.Log("\\ key pressed");
-            players[3].GetComponent<SpriteRenderer>().sprite = sprites[3];
+            player4.GetComponent<SpriteRenderer>().sprite = dance4;
             backslashKeyReleased = false;
         }
 
