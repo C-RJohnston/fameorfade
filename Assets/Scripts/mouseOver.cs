@@ -7,6 +7,6 @@ public class mouseOver : MonoBehaviour
 {
     public void LoadScene()
     {
-        SceneManager.LoadScene("Scenes/Game");
+        SceneManager.LoadScene("Scenes/Level1");
     }
 }
