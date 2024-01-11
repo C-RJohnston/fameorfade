@@ -7,6 +7,7 @@ public class EliminationScript : MonoBehaviour
 {
     public float gameDuration;
     public float decisionTime;
+    private int round = 1;
     private float gameTime;
     public GameObject[] lights;
     public GameObject[] players;
@@ -26,7 +27,7 @@ public class EliminationScript : MonoBehaviour
     {
 
         gameTime += Time.deltaTime;
-        if (gameTime < gameDuration)
+        if (gameTime < round * gameDuration)
         {
             ;
         }
@@ -47,10 +48,15 @@ public class EliminationScript : MonoBehaviour
                         light.GetComponent<Light2D>().enabled = true;
                     }
 
-                    if (gameTime > gameDuration + decisionTime + 1.1f)
+                    if (gameTime > (gameDuration + decisionTime + 1.1f) * round)
                     {
-                        var loser = Random.Range(0, 4);
+                        var loser = Random.Range(0, players.Count);
                         Lose(players[loser], lights[loser]);
+                        players.RemoveAt(loser);
+                        lights.RemoveAt(loser);
+                        scenes[round-1].GetComponent<SpriteRenderer>().sortingOrder = -2;
+                        round += 1;
+                        scenes[round-1].GetComponent<SpriteRenderer>().sortingOrder = -1;
                     }
                     
                 }
@@ -83,6 +89,5 @@ public class EliminationScript : MonoBehaviour
         light.enabled = false;
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         //TODO play sounds, progress to next scene
-        roundOver = true;
     }
 }
