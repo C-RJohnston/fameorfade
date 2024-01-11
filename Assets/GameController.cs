@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-        private bool wKeyReleased = true;
+
+    public GameObject player1;
+    public Sprite player1dance1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    private bool wKeyReleased = true;
     private bool aKeyReleased = true;
     private bool sKeyReleased = true;
     private bool dKeyReleased = true;
@@ -37,6 +43,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && wKeyReleased)
         {
             Debug.Log("W key pressed");
+            player1.GetComponent<SpriteRenderer>().sprite = player1dance1;
             wKeyReleased = false;
         }
 
