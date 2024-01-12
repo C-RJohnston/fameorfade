@@ -6,7 +6,8 @@ using UnityEngine.Rendering.Universal;
 
 public class EliminationScript : MonoBehaviour
 {
-    
+
+    public AudioClip[] songs;
     public float gameDuration;
     public float decisionTime;
     private int round = 0;
@@ -39,7 +40,7 @@ public class EliminationScript : MonoBehaviour
         {
             GetComponent<GameController>().inputEnabled = false;
             globalLight.GetComponent<Light2D>().intensity = 0.3f;
-            if(gameTime < gameDuration + decisionTime)
+            if (gameTime < gameDuration + decisionTime)
                 foreach (var light in lights)
                 {
                     FlickerLight(light);
@@ -78,11 +79,11 @@ public class EliminationScript : MonoBehaviour
                     gameOver = true;
                     // TODO play game over
                 }
-
-            }
                 
+            }
+
         }
-            
+
     }
 
     void FlickerLight(GameObject spotlight)
