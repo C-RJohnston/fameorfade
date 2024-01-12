@@ -285,7 +285,7 @@ public class GameController : MonoBehaviour
         {
             particle.SetActive(true);
             particle.GetComponent<SpriteRenderer>().sprite = particlemats[Random.Range(0, particlemats.Length)];
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             particle.SetActive(false);
         }
     }

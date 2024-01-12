@@ -51,8 +51,9 @@ public class EliminationScript : MonoBehaviour
         }
         else
         {
+            audioSource.Pause();
             audioSource.clip = roll;
-            audioSource.volume += 20;
+            //audioSource.volume += 20;
             audioSource.Play();
             GetComponent<GameController>().inputEnabled = false;
             globalLight.GetComponent<Light2D>().intensity = 0.3f;
@@ -63,6 +64,7 @@ public class EliminationScript : MonoBehaviour
                 }
             else
             {
+                audioSource.Stop();
                 foreach (var light in lights)
                 {
                     light.GetComponent<Light2D>().enabled = true;
@@ -70,8 +72,8 @@ public class EliminationScript : MonoBehaviour
 
                 if (gameTime > gameDuration + decisionTime + 1.1f && !roundOver)
                 {
-                    audioSource.Pause();
-                    audioSource.volume -= 20;
+                    
+                    //audioSource.volume -= 20;
                     var loser = Random.Range(0, players.Count());
                     Lose(players[loser], lights[loser]);
                     players.RemoveAt(loser);
