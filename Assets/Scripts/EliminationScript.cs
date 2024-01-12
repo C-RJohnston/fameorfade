@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using Random = UnityEngine.Random;
 
 public class EliminationScript : MonoBehaviour
 {
 
     public AudioClip[] songs;
+    public AudioClip roll;
+    private AudioSource audioSource;
     public float gameDuration;
     public float decisionTime;
     private int round = 0;
@@ -26,6 +30,13 @@ public class EliminationScript : MonoBehaviour
     private bool roundOver = false;
     private bool gameOver;
 
+    public GameObject cdScreen;
+    public GameObject cdGuy;
+    
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,6 +49,9 @@ public class EliminationScript : MonoBehaviour
         }
         else
         {
+            audioSource.clip = roll;
+            audioSource.volume += 20;
+            audioSource.Play();
             GetComponent<GameController>().inputEnabled = false;
             globalLight.GetComponent<Light2D>().intensity = 0.3f;
             if (gameTime < gameDuration + decisionTime)
@@ -54,6 +68,8 @@ public class EliminationScript : MonoBehaviour
 
                 if (gameTime > gameDuration + decisionTime + 1.1f && !roundOver)
                 {
+                    audioSource.Pause();
+                    audioSource.volume -= 20;
                     var loser = Random.Range(0, players.Count());
                     Lose(players[loser], lights[loser]);
                     players.RemoveAt(loser);
@@ -64,6 +80,7 @@ public class EliminationScript : MonoBehaviour
                 if (gameTime > gameDuration + decisionTime + 2.5f && round < 3)
                 {
                     background.GetComponent<SpriteRenderer>().sprite = backgroundSprites[round];
+                    audioSource.clip = songs[round];
                     gameTime = 0;
                     GetComponent<GameController>().inputEnabled = true;
                     foreach (var light in lights)
@@ -72,12 +89,21 @@ public class EliminationScript : MonoBehaviour
                     }
                     globalLight.GetComponent<Light2D>().intensity = 1f;
                     roundOver = false;
+                    audioSource.Play();
                 }
 
                 if (round == 3)
                 {
                     gameOver = true;
                     // TODO play game over
+                    foreach (var light in lights)
+                    {
+                        light.GetComponent<Light2D>().enabled = false;
+                    }
+                    globalLight.GetComponent<Light2D>().intensity = 1f;
+                    cdScreen.SetActive(true);
+                    cdGuy.SetActive(true);
+                    cdGuy.GetComponent<SpriteRenderer>().color = players[0].GetComponent<SpriteRenderer>().color;
                 }
                 
             }
