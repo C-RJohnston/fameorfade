@@ -23,12 +23,13 @@ public class EliminationScript : MonoBehaviour
     private float lightTimer;
 
     private bool roundOver = false;
+    private bool gameOver;
 
 
     // Update is called once per frame
     void Update()
     {
-
+        if (gameOver) return;
         gameTime += Time.deltaTime;
         if (gameTime < gameDuration)
         {
@@ -53,7 +54,6 @@ public class EliminationScript : MonoBehaviour
                 if (gameTime > gameDuration + decisionTime + 1.1f && !roundOver)
                 {
                     var loser = Random.Range(0, players.Count());
-                    Debug.Log(loser);
                     Lose(players[loser], lights[loser]);
                     players.RemoveAt(loser);
                     lights.RemoveAt(loser);
@@ -72,7 +72,13 @@ public class EliminationScript : MonoBehaviour
                     globalLight.GetComponent<Light2D>().intensity = 1f;
                     roundOver = false;
                 }
-                    
+
+                if (round == 3)
+                {
+                    gameOver = true;
+                    // TODO play game over
+                }
+
             }
                 
         }

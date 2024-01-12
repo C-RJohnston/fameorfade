@@ -1302,8 +1302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77cce59ef38ad04089066c7ba353def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDuration: 5
-  decisionTime: 3
+  gameDuration: 1
+  decisionTime: 1
   lights:
   - {fileID: 707542781}
   - {fileID: 352102749}
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   backgroundSprites:
   - {fileID: 21300000, guid: 9073ff5d57fdb4b58a32fcda35c73920, type: 3}
   - {fileID: 21300000, guid: af0dd76aa16e045019f8707bf7483884, type: 3}
-  - {fileID: 21300000, guid: 9073ff5d57fdb4b58a32fcda35c73920, type: 3}
+  - {fileID: 21300000, guid: 1aa1aa25f6187a240913e94e1d765667, type: 3}
 --- !u!114 &903263095
 MonoBehaviour:
   m_ObjectHideFlags: 0
