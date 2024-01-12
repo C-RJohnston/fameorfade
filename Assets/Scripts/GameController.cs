@@ -36,6 +36,11 @@ public class GameController : MonoBehaviour
     private bool semicolonKeyReleased = true;
     private bool apostropheKeyReleased = true;
     private bool backslashKeyReleased = true;
+    
+    public GameObject[] particles;
+    public Sprite[] particlemats;
+    public float spawnChance;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +60,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("W key pressed");
                 player1.GetComponent<SpriteRenderer>().sprite = dance1;
+                StartCoroutine(ChangePopUp(particles[0]));
                 wKeyReleased = false;
             }
 
@@ -67,6 +73,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("A key pressed");
                 player1.GetComponent<SpriteRenderer>().sprite = dance2;
+                StartCoroutine(ChangePopUp(particles[0]));
                 aKeyReleased = false;
             }
 
@@ -79,6 +86,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("S key pressed");
                 player1.GetComponent<SpriteRenderer>().sprite = dance3;
+                StartCoroutine(ChangePopUp(particles[0]));
                 sKeyReleased = false;
             }
 
@@ -91,6 +99,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("D key pressed");
                 player1.GetComponent<SpriteRenderer>().sprite = dance4;
+                StartCoroutine(ChangePopUp(particles[0]));
                 dKeyReleased = false;
             }
 
@@ -106,6 +115,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("T key pressed");
                 player2.GetComponent<SpriteRenderer>().sprite = dance1;
+                StartCoroutine(ChangePopUp(particles[1]));
                 tKeyReleased = false;
             }
 
@@ -118,6 +128,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("F key pressed");
                 player2.GetComponent<SpriteRenderer>().sprite = dance2;
+                StartCoroutine(ChangePopUp(particles[1]));
                 fKeyReleased = false;
             }
 
@@ -130,6 +141,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("G key pressed");
                 player2.GetComponent<SpriteRenderer>().sprite = dance3;
+                StartCoroutine(ChangePopUp(particles[1]));
                 gKeyReleased = false;
             }
 
@@ -142,6 +154,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("H key pressed");
                 player2.GetComponent<SpriteRenderer>().sprite = dance4;
+                StartCoroutine(ChangePopUp(particles[1]));
                 hKeyReleased = false;
             }
 
@@ -157,6 +170,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("I key pressed");
                 player3.GetComponent<SpriteRenderer>().sprite = dance1;
+                StartCoroutine(ChangePopUp(particles[2]));
                 iKeyReleased = false;
             }
 
@@ -169,6 +183,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("J key pressed");
                 player3.GetComponent<SpriteRenderer>().sprite = dance2;
+                StartCoroutine(ChangePopUp(particles[2]));
                 jKeyReleased = false;
             }
 
@@ -181,6 +196,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("K key pressed");
                 player3.GetComponent<SpriteRenderer>().sprite = dance3;
+                StartCoroutine(ChangePopUp(particles[2]));
                 kKeyReleased = false;
             }
 
@@ -193,6 +209,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("L key pressed");
                 player3.GetComponent<SpriteRenderer>().sprite = dance4;
+                StartCoroutine(ChangePopUp(particles[2]));
                 lKeyReleased = false;
             }
 
@@ -208,6 +225,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("[ key pressed");
                 player4.GetComponent<SpriteRenderer>().sprite = dance1;
+                StartCoroutine(ChangePopUp(particles[3]));
                 openBracketKeyReleased = false;
             }
 
@@ -220,6 +238,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("; key pressed");
                 player4.GetComponent<SpriteRenderer>().sprite = dance2;
+                StartCoroutine(ChangePopUp(particles[3]));
                 semicolonKeyReleased = false;
             }
 
@@ -232,6 +251,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("' key pressed");
                 player4.GetComponent<SpriteRenderer>().sprite = dance3;
+                StartCoroutine(ChangePopUp(particles[3]));
                 apostropheKeyReleased = false;
             }
 
@@ -244,6 +264,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("\\ key pressed");
                 player4.GetComponent<SpriteRenderer>().sprite = dance4;
+                StartCoroutine(ChangePopUp(particles[3]));
                 backslashKeyReleased = false;
             }
 
@@ -256,6 +277,17 @@ public class GameController : MonoBehaviour
         #endregion
 
 
+    }
+
+    IEnumerator ChangePopUp(GameObject particle)
+    {
+        if (Random.Range(0f, 1f) < spawnChance)
+        {
+            particle.SetActive(true);
+            particle.GetComponent<SpriteRenderer>().sprite = particlemats[Random.Range(0, particlemats.Length)];
+            yield return new WaitForSeconds(3f);
+            particle.SetActive(false);
+        }
     }
 }
 

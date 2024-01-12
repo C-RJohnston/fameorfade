@@ -7,7 +7,9 @@
     <list default="true" id="4bc076d3-d73c-49c8-a2d4-c6c5c34bd632" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fame or Fade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fame or Fade/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EliminationScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EliminationScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,7 @@
       <workItem from="1705002943887" duration="287000" />
       <workItem from="1705003251713" duration="2706000" />
       <workItem from="1705006807008" duration="1778000" />
-      <workItem from="1705055931438" duration="4729000" />
+      <workItem from="1705055931438" duration="6415000" />
     </task>
     <servers />
   </component>

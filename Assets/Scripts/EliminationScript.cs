@@ -32,6 +32,8 @@ public class EliminationScript : MonoBehaviour
 
     public GameObject cdScreen;
     public GameObject cdGuy;
+
+
     
     private void Start()
     {
@@ -135,4 +137,6 @@ public class EliminationScript : MonoBehaviour
         spotlight.SetActive(false);
 
     }
+    
+    
 }
