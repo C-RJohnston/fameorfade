@@ -32,7 +32,7 @@ public class EliminationScript : MonoBehaviour
 
     public GameObject cdScreen;
     public GameObject cdGuy;
-
+    public AudioClip gameOverClip;
 
     
     private void Start()
@@ -108,6 +108,8 @@ public class EliminationScript : MonoBehaviour
                     cdScreen.SetActive(true);
                     cdGuy.SetActive(true);
                     cdGuy.GetComponent<SpriteRenderer>().color = players[0].GetComponent<SpriteRenderer>().color;
+                    audioSource.clip = gameOverClip;
+                    audioSource.Play();
                 }
                 
             }
